@@ -1,0 +1,277 @@
+{
+  "info": {
+    "_postman_id": "acdadac2-ccd2-4496-8f0d-eff95802abfe",
+    "name": "Cohort_72_Sprint_4",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54520331"
+  },
+  "item": [
+    {
+      "name": "Agregar_un_nuevo_kit",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Mi Kit\",\r\n    \"cardId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Servidor_URL}}/api/v1/kits",
+          "host": [
+            "{{Servidor_URL}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener_kits",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{Servidor_URL}}/api/v1/kits?cardId=1",
+          "host": [
+            "{{Servidor_URL}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits"
+          ],
+          "query": [
+            {
+              "key": "cardId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar_producto_existente_a_kit",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"productsList\": [\r\n        {\r\n            \"id\": 15,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 16,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 17,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 18,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 19,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 20,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 21,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 22,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 23,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 24,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 25,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 26,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 27,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 28,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 29,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 30,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 31,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Servidor_URL}}/api/v1/kits/7/products",
+          "host": [
+            "{{Servidor_URL}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "7",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar_un_producto_a_un_kit_no_existente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"productsList\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Servidor_URL}}/api/v1/kits/555555555555/products",
+          "host": [
+            "{{Servidor_URL}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "555555555555",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar_un_producto_no_valido_a_un_kit_existente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"productsList\": [\r\n        {\r\n            \"id\": null,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Servidor_URL}}/api/v1/kits/7/products",
+          "host": [
+            "{{Servidor_URL}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "kits",
+            "7",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Realizar_pedido_en_horario_permitido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"deliveryTime\": %%,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Servidor_URL}}/order-and-go/v1/delivery",
+          "host": [
+            "{{Servidor_URL}}"
+          ],
+          "path": [
+            "order-and-go",
+            "v1",
+            "delivery"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Realizar_pedido_con_peso_permitido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"deliveryTime\": 12,\r\n    \"productsCount\": 5,\r\n    \"productsWeight\": 2,\r\n    \"productsTemperature\": 30\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Servidor_URL}}/order-and-go/v1/delivery",
+          "host": [
+            "{{Servidor_URL}}"
+          ],
+          "path": [
+            "order-and-go",
+            "v1",
+            "delivery"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Realizar_pedido_con_cantidad_permitida",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"deliveryTime\": 12,\r\n\"productsWeight\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Servidor_URL}}/order-and-go/v1/delivery",
+          "host": [
+            "{{Servidor_URL}}"
+          ],
+          "path": [
+            "order-and-go",
+            "v1",
+            "delivery"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "Servidor_URL",
+      "value": ""
+    }
+  ]
+}
