@@ -1,7 +1,7 @@
-# QA API Testing: Urban Groceries App
+# Urban Groceries API Testing Project
 
 ## 🎯 Objetivo del Proyecto
-Validación integral del backend y los endpoints de la aplicación "Urban Groceries". El enfoque principal fue garantizar la estabilidad del servidor al gestionar órdenes de compra, carritos de supermercado, productos y tiempos de entrega mediante pruebas funcionales de API.
+Validación del funcionamiento de los endpoints REST de la aplicación Urban Groceries mediante pruebas funcionales, verificando respuestas HTTP, estructura JSON, manejo de errores y reglas de negocio para identificar posibles defectos antes de su liberación.
 
 ## 🛠️ Tecnologías y Herramientas
 - **Herramientas de Pruebas**: Postman (Colección en formato JSON adjunta en el repositorio).
